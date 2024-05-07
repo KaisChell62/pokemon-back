@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const connectToDatabase = require('./db'); 
 const pokemonRoutes = require('./api/index'); 
+app.get("/", (req, res) => {
+    res.send("Bienvenue sur la partie back du simulateur Pokémon !");
+});
 
 const PORT = 3001;
 
