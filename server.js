@@ -2,16 +2,25 @@ const express = require('express');
 const app = express();
 const connectToDatabase = require('./db'); 
 const pokemonRoutes = require('./api/index'); 
+
+// Configuration de l'autorisation des requêtes CORS
+const cors = require('cors');
+app.use(cors());
+
+// Route pour la racine du serveur
 app.get("/", (req, res) => {
     res.send("Bienvenue sur la partie back du simulateur Pokémon !");
 });
 
 const PORT = 3001;
 
+// Connexion à la base de données MongoDB au démarrage du serveur
 connectToDatabase()
     .then(() => {
+        // Montage des routes Pokémon
         app.use('/api', pokemonRoutes);
         
+        // Démarrage du serveur
         app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}`);
             console.log(`Connected to MongoDB`);
