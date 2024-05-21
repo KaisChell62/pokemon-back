@@ -1,8 +1,8 @@
-// index.js dans le dossier api
+// api/index.js
 
 const express = require('express');
-const router = express.Router();
 const connectToDatabase = require('../db'); // Assure-toi que le chemin vers db.js est correct
+const router = express.Router();
 
 // Route pour récupérer des données Pokémon
 router.get("/pokemon", async (req, res) => {
