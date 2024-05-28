@@ -1,7 +1,10 @@
+require('dotenv').config();  // Importer et configurer dotenv pour utiliser les variables d'environnement
+
 const { MongoClient } = require('mongodb');
 
-const url = 'mongodb+srv://kaischelhaoui:W5E9UFJ5KAlJ7O6N@cluster0.u8g3wve.mongodb.net/';
-const dbName = 'db1'; 
+// Utiliser les variables d'environnement pour l'URL et le nom de la base de données
+const url = process.env.MONGODB_URI;
+const dbName = process.env.DB_NAME;
 
 const client = new MongoClient(url);
 

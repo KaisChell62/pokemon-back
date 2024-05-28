@@ -1,3 +1,4 @@
+require('dotenv').config();  // Import et configuration de dotenv
 const express = require('express');
 const app = express();
 const connectToDatabase = require('./db'); 
@@ -12,7 +13,8 @@ app.get("/", (req, res) => {
     res.send("Bienvenue sur la partie back du simulateur Pokémon !");
 });
 
-const PORT = 3001;
+// Utiliser la variable d'environnement pour le port
+const PORT = process.env.PORT || 3001;
 
 // Connexion à la base de données MongoDB au démarrage du serveur
 connectToDatabase()
