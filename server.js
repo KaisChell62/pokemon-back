@@ -1,13 +1,13 @@
 require('dotenv').config();  // Import et configuration de dotenv
 const express = require('express');
+const cors = require('cors');
 const app = express();
-const connectToDatabase = require('./db');
-const pokemonRoutes = require('./api/index');
+const connectToDatabase = require('./db'); 
+const pokemonRoutes = require('./api/index'); 
 
 // Configuration de l'autorisation des requêtes CORS
-const cors = require('cors');
 app.use(cors({
-  origin: 'https://simulateur-pokemon.vercel.app', // URL de votre frontend
+  origin: 'https://simulateur-pokemon-3vbvus144-chelhaouis-projects.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Si vous utilisez des cookies
   optionsSuccessStatus: 204
