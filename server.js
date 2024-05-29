@@ -6,7 +6,12 @@ const pokemonRoutes = require('./api/index');
 
 // Configuration de l'autorisation des requêtes CORS
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+  origin: 'https://simulateur-pokemon.vercel.app', // Remplace par l'URL de ton frontend
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Si tu utilises des cookies
+  optionsSuccessStatus: 204
+}));
 
 // Route pour la racine du serveur
 app.get("/", (req, res) => {
