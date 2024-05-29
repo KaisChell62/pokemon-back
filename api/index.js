@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const connectToDatabase = require('../db'); // Assure-toi que le chemin vers db.js est correct
 const router = express.Router();

@@ -1,15 +1,15 @@
 require('dotenv').config();  // Import et configuration de dotenv
 const express = require('express');
 const app = express();
-const connectToDatabase = require('./db'); 
-const pokemonRoutes = require('./api/index'); 
+const connectToDatabase = require('./db');
+const pokemonRoutes = require('./api/index');
 
 // Configuration de l'autorisation des requêtes CORS
 const cors = require('cors');
 app.use(cors({
-  origin: 'https://simulateur-pokemon.vercel.app/', // Remplace par l'URL de ton frontend
+  origin: 'https://simulateur-pokemon.vercel.app', // URL de votre frontend
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // Si tu utilises des cookies
+  credentials: true, // Si vous utilisez des cookies
   optionsSuccessStatus: 204
 }));
 
