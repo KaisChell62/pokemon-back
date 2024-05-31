@@ -13,12 +13,12 @@ Bienvenue dans la partie backend de notre simulateur de combat Pokémon ! Ce pro
 
 ## 📦 Structure du Projet
 
-/backend
-├── src
-│ ├── controllers
-│ ├── models
-│ ├── routes
-│ └── services
-├── config
-├── tests
-└── README.md
+-/backend
+-├── src
+-│ ├── controllers
+-│ ├── models
+-│ ├── routes
+-│ └── services
+-├── config
+-├── tests
+-└── README.md
