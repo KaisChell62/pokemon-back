@@ -165,6 +165,18 @@ Copier le code
   },
   ...
 ]
+
+
+
+
+
+
+```
+
+
+
+
+
 👾 À Propos du Projet
 Ce projet est un simulateur de combat Pokémon développé avec React pour le frontend et Node.js pour le backend. L'objectif est de permettre aux utilisateurs de simuler des combats entre différents Pokémon, en utilisant leurs capacités et mouvements spécifiques.
 
