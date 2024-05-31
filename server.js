@@ -5,13 +5,10 @@ const connectToDatabase = require('./db');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Configuration de l'autorisation des requêtes CORS
 app.use(cors());
 
-// Middleware pour parser le JSON des requêtes
 app.use(express.json());
 
-// Endpoint pour obtenir la liste des Pokémon
 app.get('/api/pokemon', async (req, res) => {
   try {
     const db = await connectToDatabase();
@@ -24,7 +21,6 @@ app.get('/api/pokemon', async (req, res) => {
   }
 });
 
-// Endpoint pour obtenir la liste des capacités
 app.get('/api/abilities', async (req, res) => {
   try {
     const db = await connectToDatabase();
@@ -37,7 +33,6 @@ app.get('/api/abilities', async (req, res) => {
   }
 });
 
-// Endpoint pour obtenir la liste des mouvements
 app.get('/api/moves', async (req, res) => {
   try {
     const db = await connectToDatabase();
@@ -50,7 +45,6 @@ app.get('/api/moves', async (req, res) => {
   }
 });
 
-// Endpoint pour obtenir la liste des types
 app.get('/api/types', async (req, res) => {
   try {
     const db = await connectToDatabase();
@@ -63,7 +57,6 @@ app.get('/api/types', async (req, res) => {
   }
 });
 
-// Lancement du serveur
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });

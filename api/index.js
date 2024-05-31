@@ -1,14 +1,14 @@
 const express = require('express');
-const connectToDatabase = require('../db'); // Assure-toi que le chemin vers db.js est correct
+const connectToDatabase = require('../db'); 
 const router = express.Router();
 
 // Route pour récupérer des données Pokémon
 router.get("/pokemon", async (req, res) => {
     try {
         const db = await connectToDatabase();
-        const collection = db.collection('pokemon'); // Nom de la collection "pokemon"
+        const collection = db.collection('pokemon'); 
         const result = await collection.find({}).toArray();
-        res.json(result); // Renvoyer les données Pokémon sous forme JSON
+        res.json(result); 
     } catch (error) {
         console.error('Error fetching data:', error);
         res.status(500).json({ message: 'Internal server error' });
@@ -19,9 +19,9 @@ router.get("/pokemon", async (req, res) => {
 router.get("/abilities", async (req, res) => {
     try {
         const db = await connectToDatabase();
-        const collection = db.collection('abilities'); // Nom de la collection "abilities"
+        const collection = db.collection('abilities'); 
         const result = await collection.find({}).toArray();
-        res.json(result); // Renvoyer les données Abilities sous forme JSON
+        res.json(result); 
     } catch (error) {
         console.error('Error fetching data:', error);
         res.status(500).json({ message: 'Internal server error' });
@@ -32,9 +32,9 @@ router.get("/abilities", async (req, res) => {
 router.get("/moves", async (req, res) => {
     try {
         const db = await connectToDatabase();
-        const collection = db.collection('moves'); // Nom de la collection "moves"
+        const collection = db.collection('moves');
         const result = await collection.find({}).toArray();
-        res.json(result); // Renvoyer les données Moves sous forme JSON
+        res.json(result); 
     } catch (error) {
         console.error('Error fetching data:', error);
         res.status(500).json({ message: 'Internal server error' });
@@ -45,9 +45,9 @@ router.get("/moves", async (req, res) => {
 router.get("/types", async (req, res) => {
     try {
         const db = await connectToDatabase();
-        const collection = db.collection('types'); // Nom de la collection "types"
+        const collection = db.collection('types'); 
         const result = await collection.find({}).toArray();
-        res.json(result); // Renvoyer les données Types sous forme JSON
+        res.json(result); 
     } catch (error) {
         console.error('Error fetching data:', error);
         res.status(500).json({ message: 'Internal server error' });
