@@ -68,6 +68,8 @@ GET /api/pokemon
   ...
 ]
 
+```
+
 
 ##  👾 À Propos du Projet
 
